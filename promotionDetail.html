@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="fragments/layout">
+
+	<head>
+		<title>活动详情</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui, viewport-fit=cover">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="vendor/sui/css/sm.min.css">
+		<link rel="stylesheet" href="vendor/sui/css/sm-extend.min.css"/>
+		<link rel="stylesheet" href="css/font/iconfont.css?v=1.2"/>
+		<script type="text/javascript" src="js/common/base.js"></script>
+		<script type="text/javascript" src="css/font/iconfont.js"></script>
+    	<link rel="stylesheet" href="css/page/promotion.css?v=1.2.5">
+    
+  </head>
+
+  <body>
+	   <div class="page-group">
+    		<div id="promotion-page" class="page page-current">
+			  <header class="bar bar-nav disable-router" v-if="checkShare()">
+			  		<a class="button button-link button-nav pull-left" @click="backPromotionList">
+			      <span class="icon icon-left"></span>
+			     </a>
+			   	<a class="button button-link pull-right" @click="toShare" v-if="activityId != ''">
+			      <span class="iconfont icon-share_fill"></span>
+			    </a>
+			    <h1 class="title">活动详情</h1>
+			  </header>
+     	  <a class="activitydetail__sign-up bottom_setting disable-router" v-if="checkIsSignup()" @click="reservationActivity">我要报名</a>
+     	  <a class="activitydetail__sign-up bottom_setting" v-if="activityId == ''" @click="download">打开云之享APP</a>
+			  
+			  <div class="content native-scroll">
+			    <div class="motion01">
+				     <div class="activitydetail">
+				     	  <div class="activitydetail__img"><img src="images/img02@2x.png"></div>
+				     	  <div class="activitydetail__content">
+				     	  <h1 class="activitydetail__title01">赛事信息</h1>
+				     	  <ul class="activitydetail__ul">
+				     	  <li>
+				     	  <img class="activitydetail__img01" src="images/xin@2x.png">
+				     	  <h2>报名截止<span>2018-11-09 09:50</span></h2>
+				     	  </li>
+				     	  <li>
+				     	  <img class="activitydetail__img01" src="images/xin@2x.png">
+				     	  <h2>活动时间<span>2018-11-09 09:50 ～ 2018-11-09 12:00</span></h2>
+				     	  </li>
+				     	  <li>
+				     	  <img class="activitydetail__img01" src="images/xin@2x.png">
+				     	  <h2>签到时间<span>2018-11-09 08:00 ～ 2018-11-09 11:00</span></h2>
+				     	  </li>
+				     	  <li>
+				     	  <img class="activitydetail__img01" src="images/xin@2x.png">
+				     	  <h2>活动城市<span>贵阳市花溪区十里河滩</span></h2>
+				     	  </li>
+				     	  </ul>
+				     	  </div>
+				     	  <div class="activitydetail__content01">
+				     	  <h1 class="activitydetail__title02">活动简介</h1>
+				     	  <div class="activitydetail__content01_1">
+				     	  	<b>庆祝改革开放40周年 “云之享杯”全省职工首届“我运动 我健康”万人健步走活动</b> <br/>为庆祝改革开放40周年，进一步贯彻落实《全民健身计划》，全面促进我省职工健身活动的开展，引导广大职工积极健身，在全省各级工会及广大职工中广泛开展职工健步走活动，以“新长征˙贵州工会云”APP、“云之享”APP为载体，通过线上线下互动融合的方式，将健步走活动打造为职工大健康工作品牌，为全省广大职工搭建健身锻炼、健康资讯、健康行为指导等在内的大健康服务平台，促进广大职工以强健的体魄为贵州实施大扶贫、大数据、大生态三大战略行动建功立业。结合我省职工体育活动实际，经研究，省总工会、省体育局定于2018年11月9日在全省举办庆祝改革开放40周年 “云之享杯”全省职工首届“我运动 我健康”万人健步走活动。
+				     	  <img src="images/img02@2x.png">
+				     	  </div>
+				     	  <ul class="activitydetail__ul01">
+				     	  <li>
+				     	  <div class="activitydetail__aru"></div>
+				     	  <h2>主办单位<span>贵州省总工会 贵州省体育局</span></h2>
+				     	  </li>
+				     	  <li>
+				     	  <div class="activitydetail__aru"></div>
+				     	  <h2>协办单位<span>贵阳国家级经济技术开发区管委会 <br/>贵阳市花溪区人民政府 <br/>贵阳市花溪国家湿地公园管理处 <br/>州省社会体育管理中心 <br/>贵州省职工文化体育协会</span></h2>
+				     	  </li>
+				     	  <li>
+				     	  <div class="activitydetail__aru"></div>
+				     	  <h2>承办单位<span>贵州云之享科技有限公司 <br/>贵州新长征科技传媒有限公司 <br/>贵州数安汇大数据产业发展有限公司</span></h2>
+				     	  </li>
+				     	  </ul>
+				     	  </div>
+				     	  <div class="activitydetail__content01">
+				     	  <h1 class="activitydetail__title02">活动安排</h1>
+				     	  <div class="activitydetail__content01_1">
+				     	  	本次分步走活动设1个主会场（贵阳），11个分会场（遵义市、六盘水市、安顺市、毕节市、铜仁市、贵安新区、黔西南州、黔南州、黔东南州、仁怀市、威宁县）
+				     	  	<b>主会场：</b> <br/>时间：2018年11月9日（星期五）10:00-12:00 <br/>
+				     	  	地点：贵阳市花溪区十里河滩公园（人数1000人）
+				     	  <b>活动议程：</b> <br/>（9:00 各参加活动单位组织人员入场，集合整队，9:40开始暖场健身） <br/>（1）主持人介绍莅临活动现场的领导、嘉宾 <br/>（2）贵阳市国家级经济技术开发区管委会领导致辞 <br/>（3）省体育局领导讲话 <br/>（4）省总工会领导讲话 <br/>（5）一位劳动模范代表活动参与者向全省职工宣读“我运动 我健康”倡议书 <br/>（6）省领导为健步走活动鸣枪发令 <br/>分会场活动地点自行确定、活动安排参照主会场执行，规模建议在500人左右
+				     	  </div>
+				     	  </div>
+				     	  <div class="activitydetail__txt">“云之享杯”组委会对本次活动拥有最终解释权</div>
+				     </div>	
+			    </div>
+			  </div>
+			</div>
+
+    </div>
+	  
+    <script type="text/javascript" src="vendor/zepto/zepto.min.js"></script>
+		<script type="text/javascript" src="vendor/zepto/zepto.cookie.min.js"></script>
+		<script type="text/javascript" src="js/common/config.js"></script>
+		<script type="text/javascript" src="vendor/vue/vue.min.js" ></script>
+		<script type="text/javascript" src="vendor/vue/vue-resource.min.js"></script>
+		<script type="text/javascript" src="js/common/session.js"></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/common/string.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm.min.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm-extend.min.js"></script>
+	
+		<script type="text/javascript" src="js/utils/utils.js"></script>
+		<script type="text/javascript" src="js/api/api.js?v=1.0.2"></script>
+		<script type="text/javascript" src="js/promotionDetail.js?v=1.7.5"></script>
+		<script type="text/javascript">
+			$(function(){
+				PromotionDetail.init();
+			})
+		</script>
+  </body>
+
+</html>

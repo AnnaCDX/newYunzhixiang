@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="fragments/layout">
+
+	<head>
+		<title>活动详情</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui, viewport-fit=cover">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="vendor/sui/css/sm.min.css">
+		<link rel="stylesheet" href="vendor/sui/css/sm-extend.min.css"/>
+		<link rel="stylesheet" href="css/font/iconfont.css?v=1.1"/>
+		<script type="text/javascript" src="js/common/base.js"></script>
+		<script type="text/javascript" src="css/font/iconfont.js"></script>
+    	<link rel="stylesheet" href="css/page/promotion.css?v=1.2.8">
+    
+  </head>
+
+  <body>
+	   <div id="promotion-page" class="page-group ">
+    		<div class="page page-current">
+			  <header class="bar bar-nav disable-router" v-if="checkShare()">
+			  		<a class="button button-link button-nav pull-left" @click="backPromotionList">
+			      <span class="icon icon-left "></span>
+			     </a>
+			   	<a class="button button-link pull-right" @click="toShare" v-if="activityId != ''">
+			      <span class="iconfont icon-share_fill"></span>
+			    </a>
+			    <h1 class="title ">活动详情</h1>
+			  </header>
+			  <div :class="['imgb1', mobileShare ? 'imgbg' : '']">
+		       <div class="imgbg__text"><h1>点击右上角<br />然后选择“在浏览器中打开”</h1></div>
+		       <div class="imgbg__bg"></div>
+		    </div>
+     	  <a class="activitydetail__sign-up bottom_setting disable-router" v-if="checkIsSignup()" @click="reservationActivity">我要报名</a>
+     	  <a class="activitydetail__sign-up bottom_setting" v-if="!activityId || activityId == ''" @click="download">打开云之享APP</a>
+			  
+			  
+			  <div class="content native-scroll ">
+			    <div class="motion01 ">
+				     <div class="activitydetail01">
+				     	  <div class="activitydetail01__img"><img src="images/knp.png"></div>
+				     	  
+				     	  <div class="activitydetail01__content01">
+					     	  <h1 class="activitydetail01__title02"><img src="images/fenico01.png"></h1>
+					     	  <div class="activitydetail01__content01_1">
+					     	  	<b>2019即将来临，此刻，冬日里的严寒也步步紧逼。 <br/>一直以来，我们不曾畏惧风雪，从今以后，我们也将用脚步去收获美好。 <br/>全新2019线上跨年跑，让我们一起迈出步伐，遇见美好，迎接新时光。</b>
+					     	  </div>
+					     	  <img src="images/img2x-2.png" class="activitydetail01__img-g"><img src="images/img4@2x.png" class="activitydetail01__img-g">
+				     	  </div>
+				     	  <div class="activitydetail01__content01">
+					     	  <h1 class="activitydetail01__title03" style="margin-top: 0.1rem!important;">报名方式</h1>
+					     	  <div class="activitydetail01__listul">
+					     	  <ul>
+					     	  <li>
+					     	  <Dt><img src="images/t1.png"></Dt>
+					     	  <dd>下载云之享 APP</dd>
+					     	  </li>
+					     	  <img class="activitydetail01__listul01" src="images/jd.png">
+					     	  <li>
+					     	  <Dt><img src="images/t2.png"></Dt>
+					     	  <dd>点击活动 主页</dd>
+					     	  </li>
+					     	  <img class="activitydetail01__listul01" src="images/jd.png">
+					     	  <li>
+					     	  <Dt><img src="images/t3.png"></Dt>
+					     	  <dd>点击我要 报名</dd>
+					     	  </li>
+					     	  </</ul>	
+					     	  </div>
+					     	   <h1 class="activitydetail01__title04">报名截止日期</h1>
+					     	   <div class="activitydetail01__content01_2">
+					     	  	<b>2018-12-23</b>
+					     	  </div>
+					     	  <h1 class="activitydetail01__title03">活动时间</h1>
+					     	   <div class="activitydetail01__content01_2">
+					     	  	<b>2018-12-25 ~ 2019-01-10</b>
+					     	  </div>
+				     	  </div>
+				     	  <div class="activitydetail01__content01_fb">
+					     	  <h1 class="activitydetail01__title02b"><img src="images/fenico02.png"></h1>
+					     	  <ul class="activitydetail01__ul01">
+					     	  <li>
+					     	  <div class="activitydetail01__aru"></div>
+					     	  <h2>云之享app注册用户均可报名参加本次活动</h2>
+					     	  </li>
+					     	  <li>
+					     	  <div class="activitydetail01__aru"></div>
+					     	  <h2>本次比赛通过云之享app线上完成活动要求</h2>
+					     	  </li>
+					     	  <li>
+					     	  <div class="activitydetail01__aru"></div>
+					     	  <h2>在比赛期间内，选择<span>【跑步(室内跑/室外跑)】</span>运动模式，单次跑步里程达到3公里即代表完成本次活动任务</h2>
+					     	  </li>
+					     	  <li>
+					     	  <div class="activitydetail01__aru"></div>
+					     	  <h2>活动最终解释权归云之享所有</h2>
+					     	  </li>
+					     	  </ul>
+				     	  
+				     	  </div>
+				     	  <div class="activitydetail01__content01">
+					     	  <h1 class="activitydetail01__title02"><img src="images/fenico03.png"></h1>
+					     	  <div class="activitydetail01__content01_1">
+					     	  		<b class="fontsize01">凡参加本次活动者，均可获得</b>
+					     	  </div>
+					     	  <div class="activitydetail01__img-b"><img src="images/xnp.png"></div>
+					     	  <div class="activitydetail01__content01_1">
+					     	  		<b class="fontsize">云之享2019线上新年跑徽章</b>
+					     	  </div>
+					     	  <div class="activitydetail01__content01_1">
+					     	  		<b></b>
+					     	  </div>
+					     	  <div class="activitydetail01__content01_1">
+					     	  		<b></b>
+					     	  </div>
+				     	  </div>
+				     	  
+				     </div>	
+			    </div>
+			  </div>
+			</div>
+			  
+	    <div :class="['popupcp', showShare? 'active':'']">
+				<div :class="['popupcp_nr', showShare? 'active':'']">
+					<h1 class="popupcp_nr__title">分享到</h1>
+					<ul class="popupcp_nr__list">
+						<li @click="goodFriend">
+							<dt><span class="iconfont icon-gongzhonghao"></span></dt>
+							<dd>微信好友</dd>
+						</li>	
+						<li @click="circleOfFriends">
+							<dt class="popupcp_nr__color"><span class="iconfont icon-pengyouquan"></span></dt>
+							<dd>朋友圈</dd>
+						</li>	
+					</ul>
+					<h2 class="popupcp_nr__qx"><a @click="closeShare">取消</a></h1>
+				</div>
+				<div class="popupcp_bg"></div>
+			</div>
+    </div>
+	  
+	  
+    <script type="text/javascript" src="vendor/zepto/zepto.min.js"></script>
+		<script type="text/javascript" src="vendor/zepto/zepto.cookie.min.js"></script>
+		<script type="text/javascript" src="js/common/config.js"></script>
+		<script type="text/javascript" src="vendor/vue/vue.min.js" ></script>
+		<script type="text/javascript" src="vendor/vue/vue-resource.min.js"></script>
+		<script type="text/javascript" src="js/common/session.js"></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/common/string.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm.min.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm-extend.min.js"></script>
+	
+		<script type="text/javascript" src="js/utils/utils.js"></script>
+		<script type="text/javascript" src="js/api/api.js?v=1.0.1"></script>
+		<script type="text/javascript" src="js/promotionDetail.js?v=1.6.7"></script>
+		<script type="text/javascript">
+			$(function(){
+				PromotionDetail.init();
+			})
+		</script>
+  </body>
+
+</html>

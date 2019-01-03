@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>云之享大健康</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui, viewport-fit=cover">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="vendor/sui/css/sm.css">
+		<link rel="stylesheet" href="vendor/sui/css/sm-extend.css"/>
+		<link rel="stylesheet" href="css/font/iconfont.css"/>
+		<script type="text/javascript" src="js/common/base.js"></script>
+		<script type="text/javascript" src="css/font/iconfont.js"></script>
+    	<link rel="stylesheet " href="css/page/promotion.css">
+    	<style type="text/css">
+    		img {
+    			width: 100%;
+    		}
+    	</style>
+    
+  </head>
+
+  <body>
+	   <div class="page-group ">
+	   	
+    		<div id="article-page" class="page page-current">
+			  <header class="bar bar-nav disable-router">
+			  		<a class="button button-link button-nav pull-left back" @click="backArticleList">
+			      <span class="icon icon-left"></span>
+			     </a>
+			    <h1 class="title">资讯详情</h1>
+			  </header>
+			  
+			  <div class="content native-scroll">
+			    <div class="motion">
+				     	<div class="detail">
+				     			<h1 class="detail__title" v-cloak>{{article.title}}</h1>
+				     			<div class="detail__time" v-cloak>{{article.uptime}}</div>
+				     			<div class="detail__n" v-html="article.infocontent">
+				     			</div>
+				     	</div>
+			    </div>
+			  </div>
+			  
+			</div>
+
+    </div>
+	    
+	  
+    <script type="text/javascript" src="vendor/zepto/zepto.js"></script>
+		<script type="text/javascript" src="vendor/zepto/zepto.cookie.js"></script>
+		<script type="text/javascript" src="js/common/config.js"></script>
+		<script type="text/javascript" src="vendor/vue/vue.js " ></script>
+		<script type="text/javascript" src="vendor/vue/vue-resource.js "></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/common/string.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm-extend.js"></script>
+	
+		<script type="text/javascript" src="js/utils/utils.js "></script>
+		<script type="text/javascript" src="js/api/api.js"></script>
+		<script type="text/javascript" src="js/articleDetail.js?v=1"></script>
+		<script type="text/javascript">
+			$(function(){
+				ArticleDetail.init();
+			});
+		</script>
+  </body>
+
+</html>

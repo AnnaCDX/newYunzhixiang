@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>云之享大健康</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="vendor/sui/css/sm.min.css"/>
+		<link rel="stylesheet" href="vendor/sui/css/sm-extend.min.css"/>
+		<link rel="stylesheet" href="css/font/iconfont.css?v=1.1"/>
+		<script type="text/javascript" src="js/common/base.js"></script>
+		<script type="text/javascript" src="css/font/iconfont.js"></script>
+    	<link rel="stylesheet" href="css/page/promotion.css?v=1.0.1"/>
+    <style type="text/css">
+    	img {
+    		width: 100%;
+    	}
+    </style>
+  </head>
+
+  <body>
+	   <div class="page-group ">
+    		<div id="article-page" class="page">
+			  <header class="bar bar-nav disable-router">
+			  		<a class="button button-link button-nav pull-left back" @click="backArticleList">
+			      <span class="icon icon-left"></span>
+			     </a>
+			    <h1 class="title">资讯详情</h1>
+			  </header>
+			  
+			  <div class="content native-scroll">
+			    <div class="motion">
+				     	<div class="detail">
+				     			<h1 class="detail__title">{{article.title}}</h1>
+				     			<div class="detail__time">{{article.uptime}}</div>
+				     			<div class="detail__n" v-html="article.infocontent">
+				     			</div>
+				     	</div>
+			    </div>
+			  </div>
+			  
+			</div>
+
+    </div>
+	    
+	  
+    <script type="text/javascript" src="vendor/zepto/zepto.min.js"></script>
+		<script type="text/javascript" src="vendor/zepto/zepto.cookie.min.js"></script>
+		<script type="text/javascript" src="js/common/config.js?v=1"></script>
+		<script type="text/javascript" src="vendor/vue/vue.min.js " ></script>
+		<script type="text/javascript" src="vendor/vue/vue-resource.min.js "></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/common/string.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm.min.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm-extend.min.js"></script>
+	
+		<script type="text/javascript" src="js/utils/utils.js "></script>
+		<script type="text/javascript" src="js/api/api.js?v=1.0.0"></script>
+		<script type="text/javascript" src="js/yzxArticleDetail.js?v=1"></script>
+		<script type="text/javascript">
+		$(function(){
+			YzxArticleDetail.init();
+		})
+	  	</script>
+  </body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>云之享大健康</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui, viewport-fit=cover">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="vendor/sui/css/sm.min.css"/>
+		<link rel="stylesheet" href="vendor/sui/css/sm-extend.min.css"/>
+		<link rel="stylesheet" href="css/font/iconfont.css?v=1.1.1"/>
+		<script type="text/javascript" src="js/common/base.js"></script>
+	  <link rel="stylesheet" href="css/page/promotion.css?v=1.5.3"/>
+    <style type="text/css">
+    		img {
+    			width: 100%;
+    		}
+    	</style>
+    	
+  </head>
+	
+  <body>
+	   <div id="article-page" class="page-group">
+    		<div id="articlelist" class="page page-current">
+			  <header class="bar bar-nav disable-router">
+			  		<a class="button button-link button-nav pull-left" @click="closeArticleList">
+		      		<span class="icon icon-left"></span>
+		     	</a>
+			    <h1 class="title">云之享大健康</h1>
+			  </header>
+			  <div class="running"><img src="images/runningman1.gif" @click="download"/></div>
+			  <nav class="bar bar-tab disable-router">
+					 <a v-for="(tab, index) in tabList" :class="['tab-item', tab.active]" @click="goto(index)">
+				      <span v-bind:class="['iconfont', tab.icon]"></span>
+				      <span class="tab-label" v-cloak>{{tab.title}}</span>
+				   </a>
+			  </nav> 
+			  
+			  <div class="content native-scroll">
+			    <div class="motion">
+				    
+         		<div class="swiper-container" data-space-between="0">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" v-for="(slide, index) in slideList">
+		              		<img v-bind:src="slide.infologo|image" alt="" @click="view(index)">
+		             </div>
+			      		</div>
+			      		<div class="swiper-pagination">
+		              <!--<span v-for="(slide, index) in slideList" :class="['swiper-pagination-bullet', index == 0 ? 'swiper-pagination-bullet-active' : '']"></span>-->
+		              <span v-for="(slide, index) in slideLength" class="swiper-pagination-bullet"></span>
+			      		</div>
+			    		</div>
+			    		
+			    </div>
+			    <div class="motion02">
+			    		<div class="content-block-title fonttitle ">
+							<div class="fonttitle__a ">
+								<span class="iconfont icon-icon_me- fonttitle__a-span"></span>精彩资讯
+							</div>
+						</div>
+						<!-- pull-to-refresh-content -->
+				   	<div class="content-block-title01 infinite-scroll infinite-scroll-bottom" data-distance="100" data-ptr-distance="55">
+				   		<!-- 默认的下拉刷新层 -->
+					    <!--<div class="pull-to-refresh-layer">
+					        <div class="preloader"></div>
+					    </div>-->
+						    
+				   		<div class="list-block media-list">
+					      <ul>
+					        <li v-for="(article, index) in articleList">
+					          <div class="item-content" @click="detail(index)">
+					            <div class="item-media" v-cloak><img :src="article.infologo|image" width="44"></div>
+					            <div class="item-inner">
+					              <div class="item-title-row">
+					                <div class="item-title atitle" v-cloak>{{article.title|substr}}</div>
+					              </div>
+					              <div class="item-subtitle">
+					              	<img class="img-01" src="images/icon_browse@2x.png"><span v-cloak>{{article.number}}次</span>
+					              </div>
+					              <div class="item-subtitle" style="float: right;">
+												<span v-cloak>{{article.uptime|date}}</span>
+					              </div>
+					            </div>
+					          </div>
+					        </li>
+					
+					      </ul>
+					    </div>
+				   
+				      <!-- 加载提示符 -->
+							<div class="infinite-scroll-preloader" v-show="showLoding">
+							    <div class="preloader"></div>
+							</div>
+				   	
+							<div class="infinite-scroll-preloader" v-show="noMore">
+							    没有更多
+							</div>
+							
+							<div class="infinite-scroll-preloader" v-show="showMore" @click="moreArticle">
+							    查看更多
+							</div>
+				   	</div>	
+			    </div>
+			  </div>
+			</div>
+    		
+    		<div id="articledetail" class="page">
+			  <header class="bar bar-nav">
+			  		<a class="button button-link button-nav pull-left back" href="/articleList.html">
+			      <span class="icon icon-left"></span>
+			     </a>
+			    <h1 class="title">资讯详情</h1>
+			  </header>
+			  
+			  <div class="content native-scroll">
+			    <div class="motion">
+				     	<div class="detail">
+				     			<h1 class="detail__title" v-cloak>{{article.title}}</h1>
+				     			<div class="detail__time" v-cloak>{{article.uptime}}</div>
+				     			<div class="detail__n" v-html="article.infocontent">
+				     			</div>
+				     	</div>
+			    </div>
+			  </div>
+			  
+			</div>
+	   
+	   </div>
+	   
+		<script type="text/javascript" src="vendor/zepto/zepto.min.js"></script>
+		<script type="text/javascript" src="vendor/zepto/zepto.cookie.min.js"></script>
+		<script type="text/javascript">
+			$.config = {
+				router: true,
+				showPageLoadingIndicator: false,
+				routerFilter: function($link) {
+			    // 某个区域的 a 链接不想使用路由功能
+			    if ($link.is('.disable-router a')) {
+			        return false;
+			    }
+			    return true;
+				}
+			}
+		</script>
+		<script type="text/javascript" src="vendor/vue/vue.min.js"></script>
+		<script type="text/javascript" src="vendor/vue/vue-resource.min.js "></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/common/string.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm.min.js"></script>
+		<script type="text/javascript" src="vendor/sui/js/sm-extend.min.js"></script>
+
+		<script type="text/javascript" src="js/utils/utils.js"></script>
+		<script type="text/javascript" src="js/api/api.js?v=1.0.1"></script>
+		<script type="text/javascript" src="js/articleList.js?v=1.2.3"></script>
+		<script type="text/javascript">
+		$(function(){
+			ArticleList.init();
+		})
+	  	</script>
+		
+  </body>
+</html>
