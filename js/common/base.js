@@ -1,15 +1,15 @@
 !function(window) {
-	
+
 	window.rem2px = function(val) {
 		val = parseFloat(val);
 		return val * rem;
 	}
-	
+
 	window.px2rem = function(val) {
 		val = parseFloat(val);
 		return val / rem;
 	}
-	
+
 	function rect() {
 		var width = element.getBoundingClientRect().width;
 		width = parseInt(width) > 720 ? 720 : width;
@@ -30,11 +30,10 @@
 		window.dpr = dpr;
 		window.rem = fontSize;
 	}
-	
-	var time, 
-			document = window.document, 
+	var time,
+			document = window.document,
 			element = document.documentElement,
-			dpr = window.devicePixelRatio || 1, 
+			dpr = window.devicePixelRatio || 1,
 			style = document.createElement('style')
 	window.addEventListener("resize", function() {
 		clearTimeout(time),

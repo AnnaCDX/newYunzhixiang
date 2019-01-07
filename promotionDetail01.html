@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="js/common/base.js"></script>
 		<script type="text/javascript" src="css/font/iconfont.js"></script>
     	<link rel="stylesheet" href="css/page/promotion.css?v=1.2.8">
-    
+
   </head>
 
   <body>
@@ -36,13 +36,13 @@
 		    </div>
      	  <a class="activitydetail__sign-up bottom_setting disable-router" v-if="checkIsSignup()" @click="reservationActivity">我要报名</a>
      	  <a class="activitydetail__sign-up bottom_setting" v-if="!activityId || activityId == ''" @click="download">打开云之享APP</a>
-			  
-			  
-			  <div class="content native-scroll ">
+
+
+			  <div class="content native-scroll">
 			    <div class="motion01 ">
 				     <div class="activitydetail01">
 				     	  <div class="activitydetail01__img"><img src="images/knp.png"></div>
-				     	  
+
 				     	  <div class="activitydetail01__content01">
 					     	  <h1 class="activitydetail01__title02"><img src="images/fenico01.png"></h1>
 					     	  <div class="activitydetail01__content01_1">
@@ -68,7 +68,7 @@
 					     	  <Dt><img src="images/t3.png"></Dt>
 					     	  <dd>点击我要 报名</dd>
 					     	  </li>
-					     	  </</ul>	
+					     	  </ul>
 					     	  </div>
 					     	   <h1 class="activitydetail01__title04">报名截止日期</h1>
 					     	   <div class="activitydetail01__content01_2">
@@ -99,7 +99,7 @@
 					     	  <h2>活动最终解释权归云之享所有</h2>
 					     	  </li>
 					     	  </ul>
-				     	  
+
 				     	  </div>
 				     	  <div class="activitydetail01__content01">
 					     	  <h1 class="activitydetail01__title02"><img src="images/fenico03.png"></h1>
@@ -117,32 +117,32 @@
 					     	  		<b></b>
 					     	  </div>
 				     	  </div>
-				     	  
-				     </div>	
+
+				     </div>
 			    </div>
 			  </div>
 			</div>
-			  
+
 	    <div :class="['popupcp', showShare? 'active':'']">
-				<div :class="['popupcp_nr', showShare? 'active':'']">
-					<h1 class="popupcp_nr__title">分享到</h1>
-					<ul class="popupcp_nr__list">
-						<li @click="goodFriend">
-							<dt><span class="iconfont icon-gongzhonghao"></span></dt>
-							<dd>微信好友</dd>
-						</li>	
-						<li @click="circleOfFriends">
-							<dt class="popupcp_nr__color"><span class="iconfont icon-pengyouquan"></span></dt>
-							<dd>朋友圈</dd>
-						</li>	
-					</ul>
-					<h2 class="popupcp_nr__qx"><a @click="closeShare">取消</a></h1>
-				</div>
-				<div class="popupcp_bg"></div>
-			</div>
+		   <div :class="['popupcp_nr', showShare? 'active':'']">
+			   <h1 class="popupcp_nr__title">分享到</h1>
+			   <ul class="popupcp_nr__list">
+				   <li @click="goodFriend">
+					   <dt><span class="iconfont icon-gongzhonghao"></span></dt>
+					   <dd>微信好友</dd>
+				   </li>
+				   <li @click="circleOfFriends">
+					   <dt class="popupcp_nr__color"><span class="iconfont icon-pengyouquan"></span></dt>
+					   <dd>朋友圈</dd>
+				   </li>
+			   </ul>
+			   <h2 class="popupcp_nr__qx"><a @click="closeShare">取消</a></h2>
+		   </div>
+		   <div class="popupcp_bg"></div>
+	   </div>
     </div>
-	  
-	  
+
+
     <script type="text/javascript" src="vendor/zepto/zepto.min.js"></script>
 		<script type="text/javascript" src="vendor/zepto/zepto.cookie.min.js"></script>
 		<script type="text/javascript" src="js/common/config.js"></script>
@@ -153,7 +153,7 @@
 		<script type="text/javascript" src="js/common/string.js"></script>
 		<script type="text/javascript" src="vendor/sui/js/sm.min.js"></script>
 		<script type="text/javascript" src="vendor/sui/js/sm-extend.min.js"></script>
-	
+
 		<script type="text/javascript" src="js/utils/utils.js"></script>
 		<script type="text/javascript" src="js/api/api.js?v=1.0.1"></script>
 		<script type="text/javascript" src="js/promotionDetail.js?v=1.6.7"></script>

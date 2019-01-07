@@ -1,6 +1,6 @@
 var PromotionDetail = function() {
 	'use strict';
-	
+
 	var vm = undefined;
 	/**
 	 * 初始化Vue
@@ -16,9 +16,8 @@ var PromotionDetail = function() {
 	        return true;
 	    } else {
 	        return false;
-	    }
+	    	}
 	  	}
-	  	
 		Vue.filter('isExist', function (value) {
 			if (value == '' || value == null) {
 				return '';
@@ -26,7 +25,7 @@ var PromotionDetail = function() {
 			var isExist = { "false": "我要报名", "true": "已报名"}
 			return isExist[value];
 		});
-		
+
 		var promotionData = {
 			token_yzx: '',
 			token: '',
@@ -43,7 +42,7 @@ var PromotionDetail = function() {
 			share: '',
 			mobileShare: false
 		}
-		
+
 		vm = new Vue({
 			el : '#promotion-page',
 			data : promotionData,
@@ -60,7 +59,6 @@ var PromotionDetail = function() {
 				},
 				to: function (url){
 					var self = this;
-					
 					var data = {};
 					if (self.token_yzx) {
 						data['token_yzx'] = self.token_yzx;
@@ -71,7 +69,7 @@ var PromotionDetail = function() {
 					if (self.token && self.token != 'null') {
 						data['token'] = self.token;
 					}
-					
+
 					url = url + Api.builderParams(data);
 					self.redirect(url);
 				},
@@ -90,14 +88,14 @@ var PromotionDetail = function() {
 				},
 				backPromotionList: function(){
 					var self = this;
-					
+
 					if (self.checkYunZhiXiang()) {
 						if (isIOS) {
 							var obj = new Object();
 				      	obj.message="Appear"
 				      	window.webkit.messageHandlers.infoMainViewNotify.postMessage(JSON.stringify(obj));
 						}
-						
+
 						if (isAndroid) {
 			      		if (app) {
 			        		app.setTopBottomVisible(0)
@@ -139,7 +137,7 @@ var PromotionDetail = function() {
 	          		obj.platform = "WXSceneTimeline";
 	          }
 	          window.webkit.messageHandlers.infoMainViewNotify.postMessage(JSON.stringify(obj))
-	
+
 	        }
 	        if(isAndroid){
 //	          	app.shareInfoDetail("https://app.yunzhixiang.cn:443/f_sport/" + page)
@@ -192,15 +190,15 @@ var PromotionDetail = function() {
       					self.openApp('https://app1yzx.oss-cn-shenzhen.aliyuncs.com/install_app/yunzhixiang.apk');
       				}
       			}
-      
+
 				},
 				openApp: function (src) {
 					window.location.href=src;
 				},
 				getActivityUserStatus: function() {
 					var self = this;
-					if (!self.userId 
-						|| !self.token 
+					if (!self.userId
+						|| !self.token
 						|| !self.activityId) {
 						return;
 					}
@@ -226,9 +224,9 @@ var PromotionDetail = function() {
 //					if (isAndroid) {
 //						window.location.href = 'promotionList.html?token_yzx=' + self.token_yzx;
 //					}
-					window.location.href = 'signup.html?token_yzx=' + self.token_yzx 
-					+ "&activityId=" + self.activityId 
-					+ "&userId=" + self.userId 
+					window.location.href = 'signup.html?token_yzx=' + self.token_yzx
+					+ "&activityId=" + self.activityId
+					+ "&userId=" + self.userId
 					+ "&token=" + self.token
 					+ "&isYunZhiXiang=" + self.isYunZhiXiang;
 				},
@@ -255,9 +253,9 @@ var PromotionDetail = function() {
 				self.token_yzx = Utils.generateParameterMapByUrl(document.URL)['token_yzx'];
 				self.activityId = Utils.generateParameterMapByUrl(document.URL)['activityId'];
 				self.isYunZhiXiang = Utils.generateParameterMapByUrl(document.URL)['isYunZhiXiang'];
-				
+
 				self.share = Utils.generateParameterMapByUrl(document.URL)['share'];
-								
+
 				var userId = Utils.generateParameterMapByUrl(document.URL)['userId'];
 				var token = Utils.generateParameterMapByUrl(document.URL)['token'];
 				if (userId) {
@@ -265,13 +263,13 @@ var PromotionDetail = function() {
 				} else {
         		self.userId = Session.getUserId();
        	}
-				
+
 				if (token) {
 					self.token = token;
 				} else {
         		self.token = Session.getToken();
 	      }
-				
+
 //	      	self.token = '96526bd2-92d3-47d1-a71d-13c2ebe6472c';
 //	      	self.userId = '262';
 	      	self.getActivityUserStatus();
@@ -284,7 +282,7 @@ var PromotionDetail = function() {
 	return {
 		init : function() {
 			vm = initVue();
-			
+
 			$.init();
 		}
 	}

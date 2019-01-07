@@ -203,10 +203,12 @@ function _Api() {
 }
 
 var Api = new _Api();
-//Api.baseUrl = 'http://39.105.140.12:8080';
-//Api.imagePrefix = 'https://app.yunzhixiang.cn';
-//Api.promotionImagePrefx = 'http://39.105.140.12:8080/jkzzz/getFile?filename=';
+Api.baseUrl = 'http://39.105.140.12:8080';
+Api.imagePrefix = 'https://app.yunzhixiang.cn';
+Api.promotionImagePrefx = 'http://39.105.140.12:8080/jkzzz/getFile?filename=';
 //Api.promotionImagePrefx = 'https://app.yunzhixiang.cn:443/jkzzz/getFile?filename=';
-Api.baseUrl = 'https://app.yunzhixiang.cn';
-Api.imagePrefix = '';
-Api.promotionImagePrefx = 'https://app.yunzhixiang.cn/jkzzz/getFile?filename=';
+// Api.baseUrl = 'https://app.yunzhixiang.cn';
+// Api.baseUrl = 'http://localhost:8080';
+// Api.imagePrefix = '';
+// Api.promotionImagePrefx = 'http://localhost:8080/jkzzz/getFile?filename=';
+// Api.promotionImagePrefx = 'https://app.yunzhixiang.cn/jkzzz/getFile?filename=';

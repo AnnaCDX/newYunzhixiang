@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动详情页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../vendor/sui/css/sm.min.css">
+    <link rel="stylesheet" href="../../vendor/sui/css/sm-extend.min.css"/>
+    <link rel="stylesheet" href="../../css/font/iconfont.css?v=1.1"/>
+    <script type="text/javascript" src="../../js/common/base.js"></script>
+    <script type="text/javascript" src="../../css/font/iconfont.js"></script>
+    <link rel="stylesheet" href="../../css/base/reset.css">
+    <link rel="stylesheet" href="../../css/page/promotion.css?v=1.1">
+    <link rel="stylesheet" href="./css/bestMoment.css">
+</head>
+<body>
+<div id="promotion-page" class="page-group ">
+    <div class="page page-current">
+        <header class="bar bar-nav disable-router"  v-if="checkShare()">
+            <a class="button button-link button-nav pull-left back" @click="backPromotionList">
+                <span class="icon icon-left "></span>
+            </a>
+            <a class="button button-link pull-right" @click="toShare" v-if="activityId != ''">
+                <span class="iconfont icon-share_fill"></span>
+            </a>
+            <h1 class="title ">活动详情</h1>
+        </header>
+        <div class="content native-scroll ">
+            <div class="motion01 ">
+                <div class="activitydetail01">
+                    <div class="activitydetail01__img"></div>
+
+                    <div class="activitydetail01__content01">
+                        <h1 class="activitydetail01__title02"><img class='activity_img' src="./img/activity@3x.png"></h1>
+                        <div class="activitydetail01__content01_1">
+                            <b>活动期间内运动里程达到单次3公里以上，并拍摄 <br> 本次活动参赛作品。精选1-8张照片与运动轨迹一起上传至 <br> 云之享APP【圈子-动态】并添加“最美瞬间”话题发表即可 <br> (运动结束后可通过截屏、分享功能获取运动轨迹图片)</b>
+                        </div>
+                        <img src="./img/rect1.jpg" class="activitydetail01__img-g"><img src="./img/rect2.jpg" class="activitydetail01__img-g">
+                    </div>
+                    <div class="activitydetail01__content01 background">
+                        <h1 class="activitydetail01__title03" style="margin-top: 0.1rem!important;"><img class="activity_img" src="./img/realBackgrd.png" alt=""></h1>
+                        <ul class="activity_information_group">
+                            <li>
+                                <div class="informaion_title">
+                                    <img class="trangle_blue" src="./img/trangle@3x.png" alt="">
+                                    活动时间
+                                </div>
+                                <p class="information_content">2019年2月10 至 2019年2月28日</p>
+                            </li>
+                            <li>
+                                <div class="informaion_title">
+                                    <img class="trangle_blue" src="./img/trangle@3x.png" alt="">
+                                    报名截止时间
+                                </div>
+                                <p class="information_content">2019年2月09日 </p>
+                            </li>
+                            <li>
+                                <div class="informaion_title">
+                                    <img class="trangle_blue" src="./img/trangle@3x.png" alt="">
+                                    报名方式
+                                </div>
+                                <p class="information_content">下载云之享APP注册会员，点击活动报名</p>
+                            </li>
+                            <li>
+                                <div class="informaion_title">
+                                    <img class="trangle_blue" src="./img/trangle@3x.png" alt="">
+                                    活动对象
+                                </div>
+                                <p class="information_content"><a href="javascript:;">云之享APP</a>注册用户均可报名本次活动</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="activity_rule">
+                        <h1 class="activity_rule_title"><img class="activity_img" src="./img/activity2@3x.png" alt=""></h1>
+                        <div class="rule_title_content">
+                            <div>1.<p>活动期间可选择【健走/跑步】其中一种运动模式， 活动地点不限；</p></div>
+                            <div>2.<p>活动期间完成单次运动3km以上的(健走/跑步)运动；</p></div>
+                            <div>3.<p>在活动期间可拍摄本次活动的参赛作品，精选1-8 张照片与运动轨迹一起上传至APP圈子，添加“最美 瞬间”话题发表即可（运动结束后可通过截屏、分享 功能获取运动轨迹图片）；</p></div>
+                            <div>4.<p>在云之享APP【圈子】中发布动态、上传参赛作品， 并根据动态的点赞数量进行“排名奖励”；</p></div>
+                            <div>5.<p>个人的参赛作品主题不限、作品动态数量不限，以 点赞最多的圈子动态作为个人的评选作品；</p></div>
+                            <div>6.<p>发布参赛作品的【圈子-动态】未包含运动轨迹截图 则视为无效；</p></div>
+                            <div>7.<p>本次活动最终解释权归云之享所有；</p></div>
+                        </div>
+                    </div>
+                    <div class="activiy_process">
+                        <h1 class="activity_rule_title"><img class="activity_img" src="./img/activity3@3x.png" alt=""></h1>
+                        <div class="activity_process_content">
+                            <ul class="content_list">
+                                <li class="content_list_item">
+                                    <span class="list_item_title">开始运动</span>
+                                    <p class="list_item_detail first">在活动期间进入云之享APP首页，选择运动 模式（健步走/室外跑）点击“<span class="blue_go">GO</span>”按钮，即可开始运动；</p>
+                                    <img class="process_trangle" src="./img/processTrangle@3x.png" alt="">
+                                </li>
+                                <li class="content_list_item">
+                                    <span class="list_item_title">拍摄作品</span>
+                                    <p class="list_item_detail second">在运动过程中可拍摄周围的风景作为参赛作品</p>
+                                    <img class="process_trangle" src="./img/processTrangle@3x.png" alt="">
+                                </li>
+                                <li class="content_list_item">
+                                    <span class="list_item_title">保存轨迹</span>
+                                    <p class="list_item_detail third">参赛者需完成单次运动3km以上的(健走/跑步) 运动，运动完成后截屏保存运动轨迹</p>
+                                    <img class="process_trangle" src="./img/processTrangle@3x.png" alt="">
+                                </li>
+                                <li class="content_list_item">
+                                    <span class="list_item_title">上传作品</span>
+                                    <p class="list_item_detail fourth">通过云之享APP — 圈子 — 发表动态—添加 话题（最美瞬间）——上传运动轨迹与1-8张 精选照片</p>
+                                    <img class="process_trangle" src="./img/processTrangle@3x.png" alt="">
+                                </li>
+                                <li class="content_list_item">
+                                    <span class="list_item_title">点赞分享</span>
+                                    <p class="list_item_detail fifth">参赛人员可在活动过程中查看圈子里其他成员 的动态，并进行评论、点赞、分享等操作。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="activity_reward">
+                        <h1 class="activity_rule_title"><img class="activity_img" src="./img/activity4@3x.png" alt=""></h1>
+                        <div class="activity_reward_content">
+                            <span class="order_title">第一名</span>
+                            <p class="order_rewardings">价值人名币<span>3000-5000</span>元的实物</p>
+                            <span class="order_title">第二名</span>
+                            <p class="order_rewardings">价值人名币<span>2000-3000</span>元的实物</p>
+                            <span class="order_title">第三名</span>
+                            <p class="order_rewardings">价值人名币<span>1000-2000</span>元的实物</p>
+                        </div>
+                    </div>
+                    <a class="activitydetail__sign-up disable-router" v-if="checkIsSignup()" @click="reservationActivity">我要报名</a>
+                    <a class="activitydetail__sign-up" v-if="activityId == ''" @click="download">打开云之享APP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div :class="['popupcp', showShare? 'active':'']">
+        <div :class="['popupcp_nr', showShare? 'active':'']">
+            <h1 class="popupcp_nr__title">分享到</h1>
+            <ul class="popupcp_nr__list">
+                <li @click="goodFriend">
+                    <dt><span class="iconfont icon-gongzhonghao"></span></dt>
+                    <dd>微信好友</dd>
+                </li>
+                <li @click="circleOfFriends">
+                    <dt class="popupcp_nr__color"><span class="iconfont icon-pengyouquan"></span></dt>
+                    <dd>朋友圈</dd>
+                </li>
+            </ul>
+            <h2 class="popupcp_nr__qx"><a @click="closeShare">取消</a></h2>
+        </div>
+        <div class="popupcp_bg"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../../vendor/zepto/zepto.min.js"></script>
+<script type="text/javascript" src="../../vendor/zepto/zepto.cookie.min.js"></script>
+<script type="text/javascript" src="../../js/common/config.js"></script>
+<script type="text/javascript" src="../../vendor/vue/vue.min.js" ></script>
+<script type="text/javascript" src="../../vendor/vue/vue-resource.min.js"></script>
+<script type="text/javascript" src="../../js/common/session.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/string.js"></script>
+<script type="text/javascript" src="../../vendor/sui/js/sm.min.js"></script>
+<script type="text/javascript" src="../../vendor/sui/js/sm-extend.min.js"></script>
+<script type="text/javascript" src="../../js/utils/utils.js"></script>
+<script type="text/javascript" src="../../js/api/api.js"></script>
+<script type="text/javascript" src="../../js/promotionDetail.js?v=1.5"></script>
+<script type="text/javascript">
+    $(function(){
+        PromotionDetail.init();
+    })
+</script>
+</body>
+</html>

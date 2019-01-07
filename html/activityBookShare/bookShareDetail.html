@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动详情页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../vendor/sui/css/sm.min.css">
+    <link rel="stylesheet" href="../../vendor/sui/css/sm-extend.min.css"/>
+    <link rel="stylesheet" href="../../css/font/iconfont.css?v=1.1"/>
+    <script type="text/javascript" src="../../js/common/base.js"></script>
+    <script type="text/javascript" src="../../css/font/iconfont.js"></script>
+    <link rel="stylesheet" href="../../css/base/reset.css">
+    <link rel="stylesheet" href="../../css/page/promotion.css?v=1.1">
+    <link rel="stylesheet" href="./css/bookShareDetail.css">
+</head>
+<body>
+<div id="promotion-page" class="page-group ">
+    <div class="page page-current">
+        <header class="bar bar-nav disable-router" v-if="checkShare()">
+            <a class="button button-link button-nav pull-left back" @click="backPromotionList">
+                <span class="icon icon-left "></span>
+            </a>
+            <a class="button button-link pull-right" @click="toShare" v-if="activityId != ''">
+                <span class="iconfont icon-share_fill"></span>
+            </a>
+            <h1 class="title ">活动详情</h1>
+        </header>
+        <div class="content native-scroll">
+            <div class="big_bg_container">
+                <div class="big_bg"></div>
+            </div>
+            <div class="not_stop_part">
+                <img class="not_stop_title" src="./img/notStop@3x.png" alt="">
+                <p class="not_stop_content">运动是一种健康的生活方式，它也传递着一种蓬勃向上的 正能量。当运动与爱心公益相遇，这不仅是对健康生活的 倡导，更是对爱心的传递。运动让传播公益变成一种具有 广泛性的方式。爱运动、爱公益，人人都能够参与其中， 献上自己的一份爱心，为公益事业做一份贡献，并呼吁更 多个人加入到爱心运动中。迎风向前，为爱不止步。 </p>
+                <div class="not_img_ctn">
+                    <img class="not_stop_pic" src="./img/newThreePeople.jpg" alt="">
+                    <img class="stop_pic_right" src="./img/topRight@3x.png" alt="">
+                </div>
+            </div>
+            <div class="share_activity_ctt">
+                <img class="activity_ctt_title" src="./img/activityContent@3x.png" alt="">
+                <div class="activity_ctt_content">
+                    <img class="ctt_content_img" src="./img/newHealth.jpg" alt="">
+                    <span class="ctt_content_word">
+                        <span class="content_word_line"></span>
+                        活动期间内运动量达到十次 (一次/一天) 单次3公里以上 即视为完成运动目标。
+                    </span>
+                </div>
+            </div>
+            <div class="share_activity_infor">
+                <img class="activity_ctt_title" src="./img/activityInformation@3x.png" alt="">
+                <div class="activity_infor_item">
+                    <img class="infor_item_img" src="./img/nomalTopRight@3x.png" alt="">
+                    <h2 class="infor_item_title">活动时间</h2>
+                    <p class="infor_item_ctt">2019年1月21 至 2019年2月18日</p>
+                </div>
+                <div class="activity_infor_item">
+                    <img class="infor_item_img" src="./img/nomalTopRight@3x.png" alt="">
+                    <h2 class="infor_item_title">报名截止日期</h2>
+                    <p class="infor_item_ctt">2019年1月20日 </p>
+                </div>
+                <div class="activity_infor_item">
+                    <img class="infor_item_img" src="./img/nomalTopRight@3x.png" alt="">
+                    <h2 class="infor_item_title">报名方式</h2>
+                    <p class="infor_item_ctt">下载云之享APP注册会员，点击活动报名</p>
+                </div>
+                <div class="activity_infor_item">
+                    <img class="infor_item_img" src="./img/nomalTopRight@3x.png" alt="">
+                    <h2 class="infor_item_title">活动对象</h2>
+                    <p class="infor_item_ctt"><span class="app_name">云之享APP</span>注册用户均可报名本次活动</p>
+                </div>
+            </div>
+            <div class="share_activity_process">
+                <img class="activity_ctt_title" src="./img/activityProcess@3x.png" alt="">
+                <div class="activity_process_item">
+                    <img class="process_item_img" src="./img/one@3x.png" alt="">
+                    <span class="process_item_ctt">在报名时间内下载并安装云之享APP</span>
+                </div>
+                <div class="process_line_ctn"><img class="process_line" src="./img/line@3x.png" alt=""></div>
+                <div class="activity_process_item">
+                    <img class="process_item_img" src="./img/two@3x.png" alt="">
+                    <span class="process_item_ctt">用户注册进入本次活动详情页面,点击“<span class="update_name">我要报名</span>”按钮完成本次活动的报名</span>
+                </div>
+            </div>
+            <div class="share_activity_rule">
+                <img class="activity_ctt_title" src="./img/activityRule@3x.png" alt="">
+                <p class="activity_rule_item rule_item_go">1. <span class="rule_item_num">云之享APP注册用户均可报名本次活动；</span></p>
+                <p class="activity_rule_item rule_item_go">2. <span class="rule_item_num">在活动期间内运动达到十天以上、每天运动单次 最低三公里则计入本次活动总里程，未满足上述 条件，不计入总里程；</span></p>
+                <p class="activity_rule_item rule_item_go">3. <span class="rule_item_num">在活动期间进入云之享APP首页，选择运动模式 (健步走/室外跑/室内跑) 点击“<span class="rule_item_go">GO</span>”按钮，即可 开始运动；</span></p>
+                <p class="activity_rule_item rule_item_go">4. <span class="rule_item_num">通过云之享app运动页面【运动数据—详细记录】 可查看个人运动数据，判断是否完成运动目标。</span></p>
+            </div>
+            <div class="share_activity_reward">
+                <img class="activity_ctt_title" src="./img/activityReward@3x.png" alt="">
+                <p class="activity_reward_ctt">活动总里程达到<span class="reward_title_num">10000</span>公里解锁<span class="reward_title_num">800</span>本儿童课外读物 活动总里程达到<span class="reward_title_num">15000</span>公里解锁<span class="reward_title_num">1000</span>本课外读物</p>
+                <div class="rewardings_pics_ctn">
+                    <img class="rewardings_pic" src="./img/leftTopPic@3x.png" alt="">
+                    <img class="rewardings_pic" src="./img/rightTopPic@3x.png" alt="">
+                    <img class="rewardings_pic" src="./img/leftBottomPic@3x.png" alt="">
+                    <img class="rewardings_pic" src="./img/rightBottomPic@3x.png" alt="">
+                </div>
+                <p class="reward_claiming">以上图书仅作为活动宣传使用，捐赠图书以实际发放为准</p>
+            </div>
+            <a class="activitydetail__sign-up disable-router" v-if="checkIsSignup()" @click="reservationActivity">我要报名</a>
+            <a class="activitydetail__sign-up" v-if="activityId == ''" @click="download">打开云之享APP</a>
+        </div>
+    </div>
+    <div :class="['popupcp', showShare? 'active':'']">
+        <div :class="['popupcp_nr', showShare? 'active':'']">
+            <h1 class="popupcp_nr__title">分享到</h1>
+            <ul class="popupcp_nr__list">
+                <li @click="goodFriend">
+                    <dt><span class="iconfont icon-gongzhonghao"></span></dt>
+                    <dd>微信好友</dd>
+                </li>
+                <li @click="circleOfFriends">
+                    <dt class="popupcp_nr__color"><span class="iconfont icon-pengyouquan"></span></dt>
+                    <dd>朋友圈</dd>
+                </li>
+            </ul>
+            <h2 class="popupcp_nr__qx"><a @click="closeShare">取消</a></h2>
+        </div>
+        <div class="popupcp_bg"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../../vendor/zepto/zepto.min.js"></script>
+<script type="text/javascript" src="../../vendor/zepto/zepto.cookie.min.js"></script>
+<script type="text/javascript" src="../../js/common/config.js"></script>
+<script type="text/javascript" src="../../vendor/vue/vue.min.js" ></script>
+<script type="text/javascript" src="../../vendor/vue/vue-resource.min.js"></script>
+<script type="text/javascript" src="../../js/common/session.js"></script>
+<script type="text/javascript" src="../../js/common/common.js"></script>
+<script type="text/javascript" src="../../js/common/string.js"></script>
+<script type="text/javascript" src="../../vendor/sui/js/sm.min.js"></script>
+<script type="text/javascript" src="../../vendor/sui/js/sm-extend.min.js"></script>
+<script type="text/javascript" src="../../js/utils/utils.js"></script>
+<script type="text/javascript" src="../../js/api/api.js"></script>
+<script type="text/javascript" src="../../js/promotionDetail.js?v=1.5"></script>
+<script type="text/javascript">
+    $(function(){
+        PromotionDetail.init();
+    })
+</script>
+</body>
+</html>

@@ -585,18 +585,7 @@ body {
 .activitydetail01__img img {
   width: 18.75rem;
 }
-.activitydetail01__content01 {
-  padding-bottom: 1.625rem;
-  width: 18.75rem;
-  margin: 0 auto;
-  background: #fff;
-  padding-top: 0.625rem;
-  position: relative;
-  z-index: 999999999;
-  overflow: hidden;
-  float: left;
-  clear: both;
-}
+
 .activitydetail01__content01_fb {
   width: 18.75rem;
   height: 22rem;
@@ -670,22 +659,8 @@ body {
   list-style: none;
   font-weight: normal;
 }
-.activitydetail01__title02 {
-  width: 12.3rem;
-  margin: 0 auto;
-  text-align: center;
-  background-size: 100% auto;
-  margin-top: 1.25rem;
-  overflow: hidden;
-  clear: both;
-  font-size: 1rem;
-  font-family: 苹方-简 中黑体;
-  color: #1B1B1B;
-}
-.activitydetail01__title02 img {
-  width: 9rem;
-  height: 2rem;
-}
+
+
 .activitydetail01__title02b {
   width: 12.3rem;
   margin: 0 auto;
@@ -702,19 +677,7 @@ body {
   width: 9rem;
   height: 2rem;
 }
-.activitydetail01__title03 {
-  width: 16.35rem;
-  margin: 0 auto;
-  text-align: center;
-  background: url("../../images/title02.png") no-repeat center center;
-  background-size: 100% auto;
-  margin-top: 1.25rem;
-  overflow: hidden;
-  clear: both;
-  font-size: 1rem;
-  font-family: 苹方-简 中黑体;
-  color: #1B1B1B;
-}
+
 .activitydetail01__title04 {
   width: 16.35rem;
   margin: 0 auto;
@@ -727,28 +690,9 @@ body {
   font-family: 苹方-简 中黑体;
   color: #1B1B1B;
 }
-.activitydetail01__content01_1 {
-  width: 12.5rem;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 1.25rem;
-  line-height: 1rem;
-  overflow: hidden;
-  clear: both;
-  font-size: 0.7rem;
-  font-family: 苹方-简 中黑体;
-  color: #333333;
-}
-.activitydetail01__content01_1 b {
-  margin-bottom: 0.25rem;
-  width: 100%;
-  float: left;
-  text-align: center;
-  font-weight: normal;
-  font-family: 苹方-简 常规体;
-  color: #333333;
-  overflow: hidden;
-}
+
+
+
 .activitydetail01__content01_2 {
   width: 12.5rem;
   margin: 0 auto;
@@ -771,12 +715,12 @@ body {
   color: #666;
   overflow: hidden;
 }
-.activitydetail01__content01_1 img {
-  margin-top: 0.5rem;
-  width: 100%;
-  float: left;
-  overflow: hidden;
-}
+/*.activitydetail01__content01_1 img {*/
+  /*margin-top: 0.5rem;*/
+  /*width: 100%;*/
+  /*float: left;*/
+  /*overflow: hidden;*/
+/*}*/
 .activitydetail01__ul01 {
   width: 16.125rem;
   margin: 0 auto;
@@ -818,13 +762,8 @@ body {
 .activitydetail01__ul01 li h2 span {
   color: #00c87d;
 }
-.activitydetail01__img-g {
-  width: 8.625rem;
-  height: 5.25rem;
-  margin-left: 0.5rem;
-  margin-top: 2rem;
-  float: left;
-}
+
+
 .activitydetail01__img-b {
   width: 6.75rem;
   height: 6.775rem;

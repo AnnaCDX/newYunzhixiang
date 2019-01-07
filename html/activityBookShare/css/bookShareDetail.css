@@ -1,0 +1,175 @@
+.big_bg{
+    width: 100%;
+    height: 27.5rem;
+    background-image: url("../img/newBigBack.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content{
+    background: #fff;
+}
+.not_stop_part{
+    padding-top: 2.4rem;
+    text-align: center;
+}
+.not_stop_title{
+    width: 11.85rem;
+    height: 1.25rem;
+    margin-bottom: 1.55rem;
+}
+.not_stop_content{
+    color: #333;
+    font-size: .7rem;
+    padding:1.55rem 1.25rem 1rem 1.25rem;
+}
+.not_img_ctn,.activity_ctt_content{
+    position: relative;
+}
+.not_stop_pic{
+    width: 100%;
+}
+.stop_pic_right{
+    position: absolute;
+    right: 0;
+    top: -.75rem;
+    width: 1.45rem;
+}
+.share_activity_ctt{
+    padding-top: 2.62rem;
+}
+.share_activity_infor{
+    padding-top: 1.75rem;
+    margin-top: 2.55rem;
+    background: #f6f6f6;
+    padding-bottom: .65rem;
+}
+.share_activity_process{
+    padding-top: 2rem;
+}
+.share_activity_rule{
+    padding-top: 2.8rem;
+}
+.share_activity_reward{
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+}
+.share_activity_ctt,.share_activity_infor,.share_activity_process,.share_activity_rule,.share_activity_reward{
+    text-align: center;
+}
+.ctt_content_img{
+    width:8.2rem;
+}
+.activity_ctt_content{
+    text-align: left;
+    padding-left: 1.4rem;
+}
+.activity_ctt_title{
+    width: 9.25rem;
+    margin-bottom: 1.2rem;
+}
+.ctt_content_word {
+    position: absolute;
+    width: 8.4rem;
+    z-index: 20;
+    left: 8.8rem;
+    top: .3rem;
+    height: 4.85rem;
+    color: #1b1b1b;
+    font-size: .6rem;
+    padding: 1.15rem .6rem .65rem .55rem;
+    background: #f6f6f6;
+}
+.content_word_line{
+    position: absolute;
+    top: .6rem;
+    left: .55rem;
+    width: 2.5rem;
+    height: 0.05rem;
+    background: #AA1117;
+}
+.activity_infor_item{
+    padding-bottom: 1.15rem;
+    text-align: left;
+    padding-left: 1.15rem;
+}
+.infor_item_img{
+    width: .9rem;
+}
+.infor_item_title{
+    display: inline;
+    color: #1b1b1b;
+    font-size: .85rem;
+}
+.infor_item_ctt{
+    padding-left: 1.15rem;
+    color: #666;
+    font-size: .7rem;
+}
+.activity_process_item{
+    text-align: left;
+    padding-left: .95rem;
+}
+.process_line_ctn{
+    line-height: 1;
+    text-align: left;
+    padding-left: 1.6rem;
+}
+.process_line{
+    width: .25rem;
+}
+.process_item_img{
+    width: 1.55rem;
+    vertical-align: top;
+}
+.process_item_ctt{
+    display: inline-block;
+    width: 15.9rem;
+    color: #1b1b1b;
+    font-size: .7rem;
+}
+.update_name,.app_name{
+    color: #AA1117;
+    font-weight: bold;
+}
+.activity_rule_item{
+    text-align: left;
+    padding-left: 1.3rem;
+    font-size: .7rem;
+    margin-bottom: 1rem;
+}
+.rule_item_num{
+    font-weight: normal;
+    color: #1b1b1b;
+    display: inline-block;
+    width: 16.6rem;
+    vertical-align: top;
+}
+.rule_item_go{
+    font-weight: bold;
+    color: #AA1117;
+}
+.activity_reward_ctt{
+    padding: 0 .8rem;
+    color: #666;
+    font-size: .7rem;
+    line-height: 2;
+    font-weight: lighter;
+}
+.reward_title_num{
+    color: #AA1117;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.rewardings_pics_ctn{
+    font-size: 0;
+    margin-top: 1rem;
+}
+.rewardings_pic{
+    width: 8.25rem;
+    margin: 0 .35rem .75rem .4rem;
+}
+.reward_claiming{
+    color: #AA1117;
+    font-size: .6rem;
+}

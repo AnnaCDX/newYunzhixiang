@@ -1,6 +1,6 @@
 var YzxPromotionDetail = function() {
 	'use strict';
-	
+
 	var vm = undefined;
 	/**
 	 * 初始化Vue
@@ -17,7 +17,7 @@ var YzxPromotionDetail = function() {
 			var isExist = { "false": "我要报名", "true": "已报名"}
 			return isExist[value];
 		});
-		
+
 		var promotionData = {
 			token_yzx: '',
 			token: '',
@@ -31,7 +31,7 @@ var YzxPromotionDetail = function() {
 				takePrize: 0
 			}
 		}
-		
+
 		vm = new Vue({
 			el : '#promotion-page',
 			data : promotionData,
@@ -52,14 +52,14 @@ var YzxPromotionDetail = function() {
 				},
 				backPromotionList: function(){
 					var self = this;
-					
+
 					if (self.checkYunZhiXiang()) {
 						if (isIOS) {
 							var obj = new Object();
 				      	obj.message="Appear"
 				      	window.webkit.messageHandlers.infoMainViewNotify.postMessage(JSON.stringify(obj));
 						}
-						
+
 						if (isAndroid) {
 			      		if (app) {
 			        		app.setTopBottomVisible(0)
@@ -95,7 +95,7 @@ var YzxPromotionDetail = function() {
 					var url = window.location.href;
 					var arr = url.split("/");
 					var page = arr[arr.length - 1].split('?')[0];
-					
+
 //					console.log(page)
 	        if(isIOS){
 	          var obj = new Object();
@@ -107,7 +107,7 @@ var YzxPromotionDetail = function() {
 	          		obj.platform = "WXSceneTimeline";
 	          }
 	          window.webkit.messageHandlers.infoMainViewNotify.postMessage(JSON.stringify(obj))
-	
+
 	        }
 	        if(isAndroid){
 //	          	app.shareInfoDetail("https://app.yunzhixiang.cn:443/f_sport/" + page)
@@ -118,7 +118,7 @@ var YzxPromotionDetail = function() {
 	          		platform = "WXSceneTimeline";
 	          	}
 	          	app.shareWX("https://app.yunzhixiang.cn:443/f_sport/" + page, platform)
-	          
+
 	        }
 				},
 				goodFriend: function() {//微信好友
@@ -156,26 +156,26 @@ var YzxPromotionDetail = function() {
       					self.openApp('https://app1yzx.oss-cn-shenzhen.aliyuncs.com/install_app/yunzhixiang.apk');
       				}
       			}
-      
+
 				},
 				openApp: function (src) {
 					window.location.href=src;
 				},
-				getActivityUserStatus: function() {
-					var self = this;
-					if (!self.userId 
-						|| !self.token 
-						|| !self.activityId) {
+				getActivityUserStatus(){
+					let {userId,token,activityId,userStatus} = this;
+					if (!userId
+						|| !token
+						|| !activityId) {
 						return;
 					}
-					var data = {
-						auth: self.userId,
-						token: self.token,
-						info: {"activityId": self.activityId}
+					let data = {
+						auth: userId,
+						token: token,
+						info: {activityId}
 					};
-					var success = function(result){
+					let success = function(result){
 						if (result) {
-							self.userStatus = result.userStatus;
+							userStatus = result.userStatus;
 						}
 					};
 					var error = function(result) {
@@ -190,9 +190,9 @@ var YzxPromotionDetail = function() {
 //					if (isAndroid) {
 //						window.location.href = 'promotionList.html?token_yzx=' + self.token_yzx;
 //					}
-					window.location.href = 'signup.html?token_yzx=' + self.token_yzx 
-					+ "&activityId=" + self.activityId 
-					+ "&userId=" + self.userId 
+					window.location.href = 'signup.html?token_yzx=' + self.token_yzx
+					+ "&activityId=" + self.activityId
+					+ "&userId=" + self.userId
 					+ "&token=" + self.token;
 				},
 				checkIsSignup: function() {
@@ -211,7 +211,7 @@ var YzxPromotionDetail = function() {
 				self.token_yzx = Utils.generateParameterMapByUrl(document.URL)['token_yzx'];
 				self.activityId = Utils.generateParameterMapByUrl(document.URL)['activityId'];
 				self.isYunZhiXiang = Utils.generateParameterMapByUrl(document.URL)['isYunZhiXiang'];
-								
+
 				var userId = Utils.generateParameterMapByUrl(document.URL)['userId'];
 				var token = Utils.generateParameterMapByUrl(document.URL)['token'];
 				if (userId) {
@@ -219,13 +219,13 @@ var YzxPromotionDetail = function() {
 				} else {
         		self.userId = Session.getUserId();
        	}
-				
+
 				if (token) {
 					self.token = token;
 				} else {
         		self.token = Session.getToken();
 	      }
-				
+
 //	      	self.token = '96526bd2-92d3-47d1-a71d-13c2ebe6472c';
 //	      	self.userId = '262';
 	      	self.getActivityUserStatus();
@@ -238,7 +238,7 @@ var YzxPromotionDetail = function() {
 	return {
 		init : function() {
 			vm = initVue();
-			
+
 			$.init();
 		}
 	}
